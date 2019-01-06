@@ -4,7 +4,6 @@ import urllib2
 import urllib
 from lxml import etree
 
-
 def loadPage(url):
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0"
@@ -69,7 +68,7 @@ def tiebaSpider(url,beginPage,endPage):
 
         loadPage(fullurl)
 
-        print "谢谢"
+        print "===============end=============="
 
 
 if __name__ == "__main__":
