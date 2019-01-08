@@ -11,6 +11,9 @@ import scrapy
 import os
 
 class TencentmoviePipeline(ImagesPipeline):
+    # 获取settings文件中的值
+    IMAGES_STORE = get_project_settings().get("IMAGE_STORE")
+
     def get_media_requests(self, item, info):
         image_path = item["imagePath"]
         # print "-" + image_path

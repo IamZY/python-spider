@@ -21,8 +21,8 @@ class TencentmoviespiderSpider(scrapy.Spider):
             item = TencentmovieItem()
             item["movieName"] = each.xpath('./div[@class="figure_title_score"]/strong/a/@title').extract()[0]
             item["imagePath"] = each.xpath('./a[@class="figure"]/img/@src').extract()[0]
-            print item["movieName"]
-            print item["imagePath"]
+            # print item["movieName"]
+            # print item["imagePath"]
             yield item
 
         if self.offset < 4980:
