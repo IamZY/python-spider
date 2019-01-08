@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for module project
+# Scrapy settings for douyu project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,20 +9,17 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'module'
+BOT_NAME = 'douyu'
 
-SPIDER_MODULES = ['module.spiders']
-NEWSPIDER_MODULE = 'module.spiders'
-
+SPIDER_MODULES = ['douyu.spiders']
+NEWSPIDER_MODULE = 'douyu.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-# USER_AGENT = 'module (+http://www.yourdomain.com)'
+# USER_AGENT = 'douyu (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-# 是否遵守robots协议
-# ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = True
 
-# 并发量
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 # CONCURRENT_REQUESTS = 32
 
@@ -42,22 +39,21 @@ NEWSPIDER_MODULE = 'module.spiders'
 
 # Override the default request headers:
 DEFAULT_REQUEST_HEADERS = {
-    'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134',
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-    # 'Accept-Language': 'en',
+    'Accept-Language': 'en',
 }
 
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
-# 数字代表优先级 数字越小代表优先级越高
 # SPIDER_MIDDLEWARES = {
-#    'module.middlewares.ModuleSpiderMiddleware': 543,
+#    'douyu.middlewares.DouyuSpiderMiddleware': 543,
 # }
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 # DOWNLOADER_MIDDLEWARES = {
-#    'module.middlewares.ModuleDownloaderMiddleware': 543,
+#    'douyu.middlewares.DouyuDownloaderMiddleware': 543,
 # }
 
 # Enable or disable extensions
@@ -68,11 +64,11 @@ DEFAULT_REQUEST_HEADERS = {
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-# 管道文件
 ITEM_PIPELINES = {
-    # 'module.pipelines.MySpiderPipeline': 100,
-    'module.pipelines.ItcastPipeline': 300,
+   'douyu.pipelines.DouyuPipeline': 300,
 }
+# 下载文件的位置
+IMAGES_STORE = "./pic"
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html

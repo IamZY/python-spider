@@ -21,7 +21,7 @@ class ItcastSpider(scrapy.Spider):
         # response.xpath('./h3/text())
         teacher_list = response.xpath('//div[@class="li_txt"]')
 
-        TeacherItem = []
+        # TeacherItem = []
 
         for each in teacher_list:
 
@@ -40,6 +40,9 @@ class ItcastSpider(scrapy.Spider):
             item["title"] = title[0].replace(u'\xa0', u' ')
             item["info"] = info[0].replace(u'\xa0', u' ')
 
-            TeacherItem.append(item)
+            # TeacherItem.append(item)
 
-        return TeacherItem
+            yield item
+
+
+        # return TeacherItem
