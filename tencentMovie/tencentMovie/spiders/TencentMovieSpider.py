@@ -25,7 +25,7 @@ class TencentmoviespiderSpider(scrapy.Spider):
             # print item["imagePath"]
             yield item
 
-        if self.offset < 4980:
-            self.offset += 30
-
-        yield scrapy.Request(self.url + str(self.offset),callback=self.parse)
+        # if self.offset < 4980:
+        #     self.offset += 30
+        #
+        # yield scrapy.Request(self.url + str(self.offset),callback=self.parse)

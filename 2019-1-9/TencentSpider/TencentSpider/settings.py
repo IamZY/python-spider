@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for tencentMovie project
+# Scrapy settings for TencentSpider project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,16 +9,23 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'tencentMovie'
+BOT_NAME = 'TencentSpider'
 
-SPIDER_MODULES = ['tencentMovie.spiders']
-NEWSPIDER_MODULE = 'tencentMovie.spiders'
+SPIDER_MODULES = ['TencentSpider.spiders']
+NEWSPIDER_MODULE = 'TencentSpider.spiders'
+
+# 日志信息
+LOG_FILE = "./tencentlog.log"
+# 记录日志等级 高于或者等于都保存
+LOG_LEVEL = "DEBUG"
+
+# CRITICAL ERROR WARNING DEBUG INFO
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-# USER_AGENT = 'tencentMovie (+http://www.yourdomain.com)'
+# USER_AGENT = 'TencentSpider (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 # CONCURRENT_REQUESTS = 32
@@ -44,18 +51,16 @@ DEFAULT_REQUEST_HEADERS = {
     'Accept-Language': 'en',
 }
 
-IMAGES_STORE = "./pic"
-
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 # SPIDER_MIDDLEWARES = {
-#    'tencentMovie.middlewares.TencentmovieSpiderMiddleware': 543,
+#    'TencentSpider.middlewares.TencentspiderSpiderMiddleware': 543,
 # }
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 # DOWNLOADER_MIDDLEWARES = {
-#    'tencentMovie.middlewares.TencentmovieDownloaderMiddleware': 543,
+#    'TencentSpider.middlewares.TencentspiderDownloaderMiddleware': 543,
 # }
 
 # Enable or disable extensions
@@ -67,7 +72,7 @@ IMAGES_STORE = "./pic"
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'tencentMovie.pipelines.TencentmoviePipeline': 300,
+   'TencentSpider.pipelines.TencentspiderPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

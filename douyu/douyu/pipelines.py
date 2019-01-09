@@ -13,9 +13,13 @@ import os
 
 class DouyuPipeline(ImagesPipeline):
     # 获取settings文件中的值
+
+    print "==============================================="
+
     IMAGES_STORE = get_project_settings().get("IMAGES_STORE")
 
     def get_media_requests(self, item, info):
+        print "------------------------------------------------------"
         image_url = item["imageLink"]
         yield scrapy.Request(image_url)
 

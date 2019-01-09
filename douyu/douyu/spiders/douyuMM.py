@@ -28,7 +28,7 @@ class DouyummSpider(scrapy.Spider):
 
             yield item
 
-        if self.offset < 10:
-            self.offset += 1
+        # if self.offset < 10:
+        #     self.offset += 1
 
-        yield scrapy.Request(self.url + str(self.offset),callback=self.parse)
+        # yield scrapy.Request(self.url + str(self.offset),callback=self.parse)
