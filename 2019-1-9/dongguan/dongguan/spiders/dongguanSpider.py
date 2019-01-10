@@ -14,9 +14,15 @@ class DongguanspiderSpider(CrawlSpider):
 
     rules = (
         # 匹配问号后面的
-        Rule(LinkExtractor(allow=r'page=\d+')),
+        # process_links 处理连接的方法
+        Rule(LinkExtractor(allow=r'page=\d+'),process_links="deal_links"),
         Rule(LinkExtractor(allow=r'/html/question/\d+/\d+.shtml'),callback="parse_item")
     )
+
+    # 重新处理每个response里面的连接
+    # def deal_links(self,links):
+
+
 
     def parse_item(self,response):
         item = DongguanItem()
