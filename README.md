@@ -11,4 +11,4 @@
 
   scrapy startproject myspider
 
-  scrapy genspider 爬虫名 
+  scrapy genspider 爬虫名 "网址"
