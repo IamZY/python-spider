@@ -4,10 +4,16 @@
 #
 # See documentation in:
 # https://doc.scrapy.org/en/latest/topics/spider-middleware.html
+
 import random
 import base64
+import sys
+sys.path.append("..")
+# from ..settings import USER_AGENTS
+# from settings import PROXIES
 from .settings import USER_AGENTS
 from .settings import PROXIES
+
 
 # 随机User-Agent
 class RandomUserAgent(object):

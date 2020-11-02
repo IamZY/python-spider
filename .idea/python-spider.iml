@@ -5,6 +5,7 @@
       <sourceFolder url="file://D:/Python27/Lib/site-packages" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/Scrapy_crawl_qichacha-master/QCC" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.7 (python-spider) (2)" jdkType="Python SDK" />
