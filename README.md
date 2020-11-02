@@ -12,3 +12,8 @@
   scrapy startproject myspider
 
   scrapy genspider 爬虫名 "网址"
+
++ 执行爬虫
+
+  scrapy crawl 爬虫名 -o xxx.json/csv
+
