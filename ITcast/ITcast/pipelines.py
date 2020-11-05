@@ -20,3 +20,4 @@ class ItcastPipeline(object):
 
     def close_spider(self, spider):
         self.f.close()
+
